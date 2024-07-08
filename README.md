@@ -1,5 +1,3 @@
-# Book-Backend
-
 ## Prerequisites
 
 - [Go] version 1.22.4
