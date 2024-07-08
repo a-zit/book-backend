@@ -1,6 +1,4 @@
-# Recreating the markdown file with the provided content
 
-content = """
 # Book Backend
 
 ## Table of Contents
@@ -143,11 +141,3 @@ go test ./...
 # Run tests with coverage
 make test coverage
 \`\`\`
-"""
-
-# Writing the content to a markdown file
-file_path = '/mnt/data/Book_Backend_README.md'
-with open(file_path, 'w') as file:
-    file.write(content)
-
-file_path
