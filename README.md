@@ -1,3 +1,6 @@
+# Recreating the markdown file with the provided content
+
+content = """
 # Book Backend
 
 ## Table of Contents
@@ -12,7 +15,7 @@
 
 ## Introduction
 
-project to understand clean architecture with golang by assume that we are building a book backend service.
+Project to understand clean architecture with Golang by assuming that we are building a book backend service.
 
 ## Prerequisites
 
@@ -43,7 +46,6 @@ go mod tidy
 Explain the structure of the project directory. Highlight important directories and files.
 
 \`\`\`plaintext
-
 book-backend/
 ├── LICENSE
 ├── Makefile -- Makefile for common tasks
@@ -83,7 +85,6 @@ book-backend/
 │   │   └── app_error.go -- Custom Application error
 │   └── validator
 │       └── validator.go -- Request validation
-
 \`\`\`
 
 ## Configuration
@@ -103,7 +104,7 @@ Explain how to run and use the project. Provide examples of common tasks.
 
 ### Running the Application
 
-# Docker Compose
+#### Docker Compose
 
 The project includes a \`docker-compose.yml\` file for running the application with a MariaDB database.
 
@@ -118,8 +119,9 @@ export PORT=9000
 go run cmd/backend-bo-api/main.go
 \`\`\`
 
-# If you have vscode you can run the application by using the vscode launch.json file
+#### VS Code
 
+If you have VS Code, you can run the application by using the VS Code launch.json file.
 
 ### Example Usage
 
@@ -141,4 +143,11 @@ go test ./...
 # Run tests with coverage
 make test coverage
 \`\`\`
+"""
 
+# Writing the content to a markdown file
+file_path = '/mnt/data/Book_Backend_README.md'
+with open(file_path, 'w') as file:
+    file.write(content)
+
+file_path
