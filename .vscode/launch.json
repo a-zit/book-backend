@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "backend-bo-api",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/backend-bo-api/main.go",
+            "env": {
+                "BO_PORT": "9000",
+                "MARIA_DB_URI": "user:password@tcp(localhost:3306)/mydatabase",
+            }
+        }
+    ]
+}
