@@ -100,12 +100,14 @@ func (u *useCase) Edit(ctx context.Context, request domain.EditBookRequest, id i
 		return domain.ErrBookNotFound
 	}
 	// check exist book by author and title
-	book, err = u.bookRepo.FindByTitleAndAuthor(ctx, request.Title, request.Author)
-	if err != nil {
-		return err
-	}
-	if book != nil {
-		return domain.ErrBookAlreadyExist
+	if request.Title != book.Title || request.Author != book.Author {
+		book, err = u.bookRepo.FindByTitleAndAuthor(ctx, request.Title, request.Author)
+		if err != nil {
+			return err
+		}
+		if book != nil {
+			return domain.ErrBookAlreadyExist
+		}
 	}
 	// update book
 	err = u.bookRepo.Update(ctx, id, &domain.Book{

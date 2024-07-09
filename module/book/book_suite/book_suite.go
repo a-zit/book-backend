@@ -141,7 +141,9 @@ func (s *BookSuite) TestEditButErrorAlreadyExist() {
 		Genre:             "Genre",
 		YearOfPublication: 2021,
 	}
-	s.bookRepo.On("FindByID", context.Background(), int64(1)).Return(&domain.Book{}, nil)
+	s.bookRepo.On("FindByID", context.Background(), int64(1)).Return(&domain.Book{
+		Title: "Title",
+	}, nil)
 	s.bookRepo.On("FindByTitleAndAuthor", context.Background(), req.Title, req.Author).
 		Return(&domain.Book{}, nil)
 	err := s.useCase.Edit(context.Background(), req, int64(1))
